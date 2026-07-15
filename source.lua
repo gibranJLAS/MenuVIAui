@@ -55,10 +55,6 @@ function Kavo:DraggingEnabled(frame, parent)
     end)
 end
         
-    parent = parent or frame
-    
-    -- stolen from wally or kiriot, kek
-    local dragging = false
     local dragInput, mousePos, framePos
 
     frame.InputBegan:Connect(function(input)
