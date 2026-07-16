@@ -652,6 +652,7 @@ function Kavo.CreateLib(kavName, themeList)
                 moreInfo.RichText = true
                 moreInfo.TextColor3 = themeList.TextColor
                 Objects[moreInfo] = "TextColor3"
+                moreInfo.Visible = false
                 moreInfo.TextSize = 14.000
                 moreInfo.TextXAlignment = Enum.TextXAlignment.Left
                 Objects[moreInfo] = "BackgroundColor3"
@@ -755,6 +756,7 @@ function Kavo.CreateLib(kavName, themeList)
                                 Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)
                             end
                         end
+                        moreInfo.Visible = true
                         Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,0,0)}, 0.2)
                         Utility:TweenObject(blurFrame, {BackgroundTransparency = 0.5}, 0.2)
                         Utility:TweenObject(btn, {BackgroundColor3 = themeList.ElementColor}, 0.2)
@@ -762,7 +764,8 @@ function Kavo.CreateLib(kavName, themeList)
                         focusing = false
                         Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,2,0)}, 0.2)
                         Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
-                        wait(0)
+                        wait(0.2)
+                        moreInfo.Visible = false
                         viewDe = false
                     end
                 end)
