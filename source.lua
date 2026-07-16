@@ -648,11 +648,10 @@ function Kavo.CreateLib(kavName, themeList)
                 moreInfo.Size = UDim2.new(0, 353, 0, 33)
                 moreInfo.ZIndex = 9
                 moreInfo.Font = Enum.Font.GothamSemibold
-                moreInfo.Text = "### TEST TEXTLABEL ###"
+                moreInfo.Text = "   "..tipINF
                 moreInfo.RichText = true
                 moreInfo.TextColor3 = themeList.TextColor
                 Objects[moreInfo] = "TextColor3"
-                moreInfo.Visible = false
                 moreInfo.TextSize = 14.000
                 moreInfo.TextXAlignment = Enum.TextXAlignment.Left
                 Objects[moreInfo] = "BackgroundColor3"
@@ -756,7 +755,7 @@ function Kavo.CreateLib(kavName, themeList)
                                 Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)
                             end
                         end
-                        moreInfo.Visible = true
+                       
                         Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,0,0)}, 0.2)
                         Utility:TweenObject(blurFrame, {BackgroundTransparency = 0.5}, 0.2)
                         Utility:TweenObject(btn, {BackgroundColor3 = themeList.ElementColor}, 0.2)
@@ -764,8 +763,7 @@ function Kavo.CreateLib(kavName, themeList)
                         focusing = false
                         Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,2,0)}, 0.2)
                         Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
-                        wait(0.2)
-                        moreInfo.Visible = false
+                        wait(0)
                         viewDe = false
                     end
                 end)
@@ -1356,6 +1354,7 @@ function Kavo.CreateLib(kavName, themeList)
                 moreInfo.Position = UDim2.new(0, 0, 0, 0)
                 moreInfo.Size = UDim2.new(0, 353, 0, 33)
                 moreInfo.ZIndex = 9
+                moreInfo.Visible = false
                 moreInfo.Font = Enum.Font.GothamSemibold
                 moreInfo.Text = "  "..slidTip
                 moreInfo.TextColor3 = themeList.TextColor
@@ -1468,6 +1467,7 @@ end)
                                 Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)
                             end
                         end
+                        moreInfo.Visible = true
                         Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,0,0)}, 0.2)
                         Utility:TweenObject(blurFrame, {BackgroundTransparency = 0.5}, 0.2)
                         Utility:TweenObject(btn, {BackgroundColor3 = themeList.ElementColor}, 0.2)
@@ -1475,7 +1475,8 @@ end)
                         focusing = false
                         Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,2,0)}, 0.2)
                         Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
-                        wait(0)
+                        wait(0.2)
+                        moreInfo.Visible = false
                         viewDe = false
                     end
                 end)        
